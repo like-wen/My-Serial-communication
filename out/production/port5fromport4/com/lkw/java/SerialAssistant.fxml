@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane id="Baud" fx:id="anchorage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lkw.java.SerialAssistant">
+    <children>
+       <TextArea fx:id="receiveText" layoutX="10.0" layoutY="10.0" prefHeight="250.0" prefWidth="680.0" />
+
+        <Text fx:id="fileTips" layoutX="10.0" layoutY="289.0" text="绝对地址:" />
+        <TextField fx:id="fileTextField" layoutX="70.0" layoutY="270.0" prefHeight="30.0" prefWidth="450.0" />
+        <TextArea fx:id="sendText" layoutX="10.0" layoutY="310.0" prefHeight="230.0" prefWidth="510.0" />
+
+        <Button fx:id="clear" layoutX="530.0" layoutY="270.0" mnemonicParsing="false" onAction="#clear" prefHeight="30.0" prefWidth="160.0" text="清除" />
+        <ComboBox fx:id="comboBox" layoutX="530.0" layoutY="310.0" onShown="#onShowComboBox" prefHeight="30.0" prefWidth="160.0" />
+        <ComboBox fx:id="BaudRateBox" layoutX="530.0" layoutY="350.0" onShown="#onShowBaudRateBox" prefHeight="30.0" prefWidth="160.0" />
+        <ComboBox fx:id="ParityBox" layoutX="530.0" layoutY="390.0" onShown="#onShowParityBox" prefHeight="30.0" prefWidth="160.0" />
+        <Button fx:id="openBnt" layoutX="530.0" layoutY="430.0" mnemonicParsing="false" onAction="#onActionOpenBtn" prefHeight="30.0" prefWidth="160.0" text="打开串口" />
+        <Button fx:id="sendBnt" layoutX="530.0" layoutY="470.0" mnemonicParsing="false" onAction="#onActionSendBtn" prefHeight="30.0" prefWidth="160.0" text="文本发送" />
+        <Button fx:id="sendFileBnt" layoutX="530.0" layoutY="510.0" mnemonicParsing="false" onAction="#onActionSendFileBtn" prefHeight="30.0" prefWidth="160.0" text="文件发送" />
+        <Text fx:id="myMessage" layoutX="10.0" layoutY="555.0" text="请选择功能后打开串口" />
+    </children>
+</AnchorPane>
