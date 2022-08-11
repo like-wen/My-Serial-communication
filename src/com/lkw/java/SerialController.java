@@ -1,5 +1,6 @@
 package com.lkw.java;
 
+import com.lkw.java.common.Byte2Object;
 import gnu.io.*;
 
 import java.io.*;
@@ -10,6 +11,10 @@ public class SerialController {
   /*  private final int partFileSize = 2048;
     private int partFileNum;*/
     private SerialPort serialPort;
+
+
+    public OutPortFrames outPortFrames;
+    public  InPortFrames inPortFrames=new InPortFrames();
 
     /**
      * 获得系统可用端口的列表
@@ -90,15 +95,46 @@ public class SerialController {
         }
     }
 
+    public void sendByte(byte[] bytes){
+        outPortFrames = new OutPortFrames(bytes);
+        byte[] allBytes = outPortFrames.portFrames[0].getAllBytes();
+        sendData(allBytes);
+
+    }
+    public void sendStr(String str){
+        outPortFrames = new OutPortFrames(str);
+        byte[] allBytes = outPortFrames.portFrames[0].getAllBytes();
+        sendData(allBytes);
+    }
+    public void sendFile(File file){
+        outPortFrames = new OutPortFrames(file);
+        int frameNum = (int) outPortFrames.portFrames[0].getFrameNum();
+        for (int i = 0; i < frameNum; i++) {
+            //发送
+            sendData(outPortFrames.portFrames[i].getAllBytes());
+            //判断
+
+
+            //
+            //读取确认帧
+            InPortFrames inPortFrames = new InPortFrames();
+            //如果CRC错误
+            if(inPortFrames.Receive(readByteData()));
+            //(默认正确,还没有加判断)
+
+
+        }
+    }
+
     /**
      * 向串口发送数据
      * @param data 发送的数据
      */
-    public void sendData(String data) {
+    public void sendData(byte[] data) {
         System.out.println("发送数据:"+data);//
         PrintStream printStream = null;
         try {
-            printStream = new PrintStream(serialPort.getOutputStream(), true, "GBK");  //获取串口的输出流
+            printStream = new PrintStream(serialPort.getOutputStream());  //获取串口的输出流
             printStream.print(data);
         } catch (IOException e) {
             e.printStackTrace();
@@ -210,6 +246,7 @@ public class SerialController {
         }
         return str;
     }*/
+
 
 
     /**

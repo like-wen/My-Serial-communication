@@ -11,7 +11,7 @@ public class InPortFrames extends PortFrames{
     long fileInNum;
 
     /**
-     * 接收
+     * 接收,并检查CRC
      * @param bytes
      * @return
      */
@@ -40,10 +40,20 @@ public class InPortFrames extends PortFrames{
 
     /**
      * 重发提示
+     * 1是传输正确
+     * -1是传输错误
      * @return
      */
-    public byte[] RepeatRequest(){
-        PortFrame portFrame = new PortFrame(3,fileInNum, Object2Byte.String2Byte("test"));
+    public byte[] RepeatRequest(boolean b)  {
+        if(mode==3)
+            return null;
+        String str = new String();
+        if(b==true)
+            str="1";
+        else
+            str="-1";
+
+        PortFrame portFrame = new PortFrame(3,fileInNum, Object2Byte.String2Byte(str));
         return portFrame.getAllBytes();
     }
 

@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.*;
+import java.lang.annotation.Repeatable;
 import java.util.List;
 
 
@@ -86,20 +87,18 @@ public class SerialAssistant {
             if (!serialController.open(comboBox.getValue(), BaudRateBox.getValue(),ParityBox.getValue())) {//如果打开失败
                 return;
             }
-            serialController.setListenerToSerialPort(ev -> {
+            serialController.setListenerToSerialPort(ev -> {//有消息传来
                 if (ev.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
-                    System.out.println("partFileNum"+partFileNum);//
-                    if(partFileNum==0) {
-                        acceptString();
-                    }else if(partFileNum==-1){
-                        acceptFileNum();
-                    }else {
-                        try {
-                            acceptFile();
-                            partFileNum--;
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    byte[] bytes = serialController.readByteData();
+                    //检查请求
+                    byte[] repeat = serialController.inPortFrames.RepeatRequest(serialController.inPortFrames.Receive(bytes));
+                    serialController.sendData(repeat);
+                    if(serialController.inPortFrames.CheckFull()){
+                        Object o = serialController.inPortFrames.OutPut();
+                        if(String.class.equals(o))
+                            acceptString((String)o);
+                        else if(byte[].class.equals(o))//byte保留
+                            acceptString((String)o);
                     }
                 }
             });
@@ -111,11 +110,14 @@ public class SerialAssistant {
             myMessage.setText("串口已关闭");
         }
     }
+/*
 
-    /**
+    */
+/**
      * 文件接收
      * @throws IOException
-     */
+     *//*
+
     private void acceptFile() throws IOException {
         byte[] bytes = serialController.readByteData();
         mainBytes=concat(mainBytes,bytes);
@@ -126,12 +128,14 @@ public class SerialAssistant {
         }
     }
 
-    /**
+    */
+/**
      * 合并数组
      * @param firstArray
      * @param secondArray
      * @return
-     */
+     *//*
+
     public byte[] concat(byte[] firstArray, byte[] secondArray) {
         if(firstArray==null){
             return secondArray;
@@ -149,19 +153,22 @@ public class SerialAssistant {
         return endArray;
     }
 
-    /**
+    */
+/**
      * 接收文件篇章页数
-     */
+     *//*
+
     private void acceptFileNum() {
              partFileNum = Integer.parseInt(serialController.readData());
         System.out.println("partFileNum已经更改"+partFileNum);
     }
+*/
 
     /**
      * 接收文本信息
      */
-    private void acceptString() {
-        String str = serialController.readData();
+    private void acceptString(String str) {
+
         Platform.runLater(() -> {
             if (receiveText.getLength() < 4000) {
                 receiveText.appendText(str);
@@ -170,26 +177,26 @@ public class SerialAssistant {
                 receiveText.appendText(str);
             }
         });
-        JudgeFileTrans(str);//判断是否是文件传输
+
     }
 
-    /**
+ /*   *//**
      * 判断是否是文件传输
      * @param str
-     */
+     *//*
     private void JudgeFileTrans(String str) {
         if (str.substring(0, 6).equals("开始传输文件")) {
             writeFilename = str.substring(6);
             partFileNum = -1;
         }
-    }
+    }*/
 
     /**
      * 文本发送按钮
      * @param actionEvent
      */
     public void onActionSendBtn(ActionEvent actionEvent) {
-        serialController.sendData(sendText.getText());
+        serialController.sendStr(sendText.getText());
         myMessage.setText("文本已发送");
     }
 
@@ -201,7 +208,7 @@ public class SerialAssistant {
     public void onActionSendFileBtn(ActionEvent actionEvent) throws InterruptedException {
         String filepath = fileTextField.getText();
         File file=new File(filepath);
-        serialController.sendData(file);
+        serialController.sendFile(file);
         myMessage.setText("文件已发送");
     }
 
