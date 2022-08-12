@@ -5,7 +5,8 @@ import com.lkw.java.common.Object2Byte;
 import java.io.File;
 
 public class OutPortFrames extends PortFrames{
-    long fileOutNum;
+    long fileOutNum=0;
+
 
     public OutPortFrames(File file) {
         //创建fileFrame对象,并且设置模式
@@ -34,6 +35,7 @@ public class OutPortFrames extends PortFrames{
     }
 
     public int getTotalFrameNum(){
+
         return (int)this.portFrames[0].frameNum;
 
     }

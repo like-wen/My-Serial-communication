@@ -13,9 +13,9 @@ public class SerialController {
     private SerialPort serialPort;
 
 
-    public OutPortFrames outPortFrames;
+    public OutPortFrames outPortFrames=new OutPortFrames("");
     //现帧数//-1代表没有文件在发送
-    public int frameNum;
+    public int frameNum=-1;
 
     public InPortFrames inPortFrames = new InPortFrames();
 

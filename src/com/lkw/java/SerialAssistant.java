@@ -105,16 +105,15 @@ public class SerialAssistant {
                     //如果发送帧数等于总帧数,就销毁
                     if(serialController.frameNum== serialController.outPortFrames.getTotalFrameNum())
                         serialController.frameNum=-1;
-
                     //正常接收对方发的
-                        if (serialController.inPortFrames.CheckFull()) {
-                            Object o = serialController.inPortFrames.OutPut();
+                    if (serialController.inPortFrames.CheckFull()) {
+                        Object o = serialController.inPortFrames.OutPut();
+                        acceptString((String) o);
+                        /*if (String.class.equals(o))
                             acceptString((String) o);
-                            /*if (String.class.equals(o))
-                                acceptString((String) o);
-                            else if (byte[].class.equals(o))//byte保留
-                                acceptString((String) o);*/
-                        }
+                        else if (byte[].class.equals(o))//byte保留
+                            acceptString((String) o);*/
+                    }
 
                 }
             });
