@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="port5fromport4:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d0e1a79-3f62-4a6c-9a95-5c5249a81c9b" name="Changes" comment="String正常,File正在试验">
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/InPortFrames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/InPortFrames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/OutPortFrames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/OutPortFrames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialAssistant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialAssistant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/porttest/Object2ByteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/porttest/Object2ByteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/OutPortFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/OutPortFrames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/porttest/Object2ByteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/porttest/Object2ByteTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DEvfmsH0uQhSewi1wF146CvFT5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/work/javacode/JAR/RXTXcomm.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager" selected="JAR Application.port5fromport4.jar">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lkw.java.Main" />
+      <module name="port5fromport4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lkw.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Object2ByteTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="porttest.Object2ByteTest" />
+      <module name="port5fromport4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="porttest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="port5fromport4.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/port5fromport4_jar/port5fromport4.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.port5fromport4.jar" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Object2ByteTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d0e1a79-3f62-4a6c-9a95-5c5249a81c9b" name="Changes" comment="" />
+      <created>1660277167165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660277167165</updated>
+      <workItem from="1660277169726" duration="7597000" />
+    </task>
+    <task id="LOCAL-00001" summary="String初步正常,File正在试验">
+      <created>1660277419414</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660277419414</updated>
+    </task>
+    <task id="LOCAL-00002" summary="String正常,File正在试验">
+      <created>1660292081286</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660292081286</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="String初步正常,File正在试验" />
+    <MESSAGE value="String正常,File正在试验" />
+    <option name="LAST_COMMIT_MESSAGE" value="String正常,File正在试验" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialController.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialController.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/OutPortFrames.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/common/Object2Byte.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/FileFrames.java</url>
+          <line>13</line>
+          <properties class="com.lkw.java.FileFrames" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/OutPortFrames.java</url>
+          <line>10</line>
+          <properties class="com.lkw.java.OutPortFrames" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/common/Object2Byte.java</url>
+          <line>24</line>
+          <properties class="com.lkw.java.common.Object2Byte" method="File2Byte">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

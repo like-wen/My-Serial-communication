@@ -63,10 +63,10 @@ public class InPortFrames extends PortFrames{
      */
     public boolean CheckFull(){
         //直接判满
-        if(mode==1||mode==1||mode==3)
+        if(mode==1||mode==3)
             return true;
         //判断总帧数对不对
-        if(mode==2||fileInNum==portFrames[0].getFrameNum())
+        if(mode==2&&fileInNum-1==portFrames[0].getFrameNum())
             return true;
         else return false;
     }
