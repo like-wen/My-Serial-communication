@@ -8,13 +8,16 @@ import java.nio.file.Files;
 import java.util.*;
 
 public class SerialController {
-  /*  private final int partFileSize = 2048;
-    private int partFileNum;*/
+    /*  private final int partFileSize = 2048;
+      private int partFileNum;*/
     private SerialPort serialPort;
 
 
     public OutPortFrames outPortFrames;
-    public  InPortFrames inPortFrames=new InPortFrames();
+    //现帧数//-1代表没有文件在发送
+    public int frameNum;
+
+    public InPortFrames inPortFrames = new InPortFrames();
 
     /**
      * 获得系统可用端口的列表
@@ -36,6 +39,7 @@ public class SerialController {
 
     /**
      * 开启串口
+     *
      * @param name     串口名称
      * @param baudRate 波特率
      * @return 串口对象
@@ -67,6 +71,7 @@ public class SerialController {
 
     /**
      * 通过String判断奇偶校验位
+     *
      * @param parity_str
      * @return
      */
@@ -95,47 +100,46 @@ public class SerialController {
         }
     }
 
-    public void sendByte(byte[] bytes){
+    public void sendByte(byte[] bytes) {
         outPortFrames = new OutPortFrames(bytes);
         byte[] allBytes = outPortFrames.portFrames[0].getAllBytes();
         sendData(allBytes);
 
     }
-    public void sendStr(String str){
+
+    public void sendStr(String str) {
         outPortFrames = new OutPortFrames(str);
         byte[] allBytes = outPortFrames.portFrames[0].getAllBytes();
         sendData(allBytes);
     }
-    public void sendFile(File file){
+
+    public void initSendFile(File file) {
         outPortFrames = new OutPortFrames(file);
-        int frameNum = (int) outPortFrames.portFrames[0].getFrameNum();
-        for (int i = 0; i < frameNum; i++) {
-            //发送
-            sendData(outPortFrames.portFrames[i].getAllBytes());
-            //判断
+        frameNum = 0;
+        sendFile();
 
+    }
 
-            //
-            //读取确认帧
-            InPortFrames inPortFrames = new InPortFrames();
-            //如果CRC错误
-            if(inPortFrames.Receive(readByteData()));
-            //(默认正确,还没有加判断)
+    public void sendFile() {
+        sendData(outPortFrames.portFrames[frameNum].getAllBytes());
 
-
-        }
     }
 
     /**
      * 向串口发送数据
+     *
      * @param data 发送的数据
      */
     public void sendData(byte[] data) {
-        System.out.println("发送数据:"+data);//
+        System.out.println();
+        for (int i = 0; i < data.length; i++) {
+
+            System.out.print(data[i]);
+        }
         PrintStream printStream = null;
         try {
             printStream = new PrintStream(serialPort.getOutputStream());  //获取串口的输出流
-            printStream.print(data);
+            printStream.write(data);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -145,7 +149,7 @@ public class SerialController {
         }
     }
 
-/*    *//**
+    /*    *//**
      * 向串口发送数据
      * @param data 发送的数据
      *//*
@@ -193,11 +197,12 @@ public class SerialController {
 
     /**
      * 读取输入流
+     *
      * @return
      */
-    public InputStream readInputStream(){
+    public InputStream readInputStream() {
         try {
-            return  serialPort.getInputStream();
+            return serialPort.getInputStream();
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -206,6 +211,7 @@ public class SerialController {
 
     /**
      * 读取输入字节
+     *
      * @return
      */
     public byte[] readByteData() {
@@ -230,8 +236,8 @@ public class SerialController {
         }
         return bytes;
     }
-/*
-    *//**
+    /*
+     *//**
      * 读取串口数据
      * @return 返回串口数据
      *//*
@@ -248,9 +254,9 @@ public class SerialController {
     }*/
 
 
-
     /**
      * 监听
+     *
      * @param listener
      */
     public void setListenerToSerialPort(SerialPortEventListener listener) {

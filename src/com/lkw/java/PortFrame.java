@@ -94,8 +94,30 @@ public class PortFrame {
             return bytes;
         }else {
             byte[] bytes1 = Object2Byte.Int2Byte(mode);
+            System.out.print("mode:");
+            for (int i = 0; i < bytes1.length; i++) {
+                System.out.print(bytes1[i]);
+            }
+
             byte[] bytes2 = Object2Byte.Long2Byte(frameNum);
+            System.out.print("    frameNum:");
+            for (int i = 0; i < bytes2.length; i++) {
+                System.out.print(bytes2[i]);
+            }
+
             byte[] bytes3 = Object2Byte.Long2Byte(CRC);
+            System.out.print("    CRC:");
+            for (int i = 0; i < bytes3.length; i++) {
+                System.out.print(bytes3[i]);
+            }
+
+
+            System.out.print("    bytes:");
+            for (int i = 0; i < this.bytes.length; i++) {
+                System.out.print(this.bytes[i]);
+            }
+
+
             return ByteCopy.ByteMerge(ByteCopy.ByteMerge(bytes1, bytes2), ByteCopy.ByteMerge(bytes3, this.bytes));
         }
     }

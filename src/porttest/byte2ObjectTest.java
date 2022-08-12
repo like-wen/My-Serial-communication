@@ -6,7 +6,7 @@ public class byte2ObjectTest {
 
     public static void main(String[] args) {
 
-        byte[] bytes1 = {0,0,1,1};
+        byte[] bytes1 = {0,0,0,1};
         int i = Byte2Object.Byte2Int(bytes1);
         System.out.println(i);
 

@@ -33,5 +33,10 @@ public class OutPortFrames extends PortFrames{
         portFrames[0]=new PortFrame(0,bytes);
     }
 
+    public int getTotalFrameNum(){
+        return (int)this.portFrames[0].frameNum;
+
+    }
+
 
 }

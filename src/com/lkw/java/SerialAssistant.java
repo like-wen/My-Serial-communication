@@ -37,9 +37,7 @@ public class SerialAssistant {
     private SerialController serialController;
     private List<String> systemPorts;
     private boolean isOpen = false;
-    private int partFileNum=0;//0是String -1是接收大小,其他是用来递减的
-    private String writeFilename;
-    private byte[] mainBytes;
+
 
     public SerialAssistant() {
        systemPorts = SerialController.getSystemPort();
@@ -91,15 +89,33 @@ public class SerialAssistant {
                 if (ev.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
                     byte[] bytes = serialController.readByteData();
                     //检查请求
-                    byte[] repeat = serialController.inPortFrames.RepeatRequest(serialController.inPortFrames.Receive(bytes));
-                    serialController.sendData(repeat);
-                    if(serialController.inPortFrames.CheckFull()){
-                        Object o = serialController.inPortFrames.OutPut();
-                        if(String.class.equals(o))
-                            acceptString((String)o);
-                        else if(byte[].class.equals(o))//byte保留
-                            acceptString((String)o);
+                    boolean receive = serialController.inPortFrames.Receive(bytes);
+                    //mode==3就跳过
+                    if(serialController.inPortFrames.mode!=3&&receive) {
+                        byte[] repeat = serialController.inPortFrames.RepeatRequest(receive);
+                        serialController.sendData(repeat);
                     }
+                    //mode==3并且对方接收正确
+                    if(serialController.inPortFrames.mode==3&&serialController.inPortFrames.checkMode_3())
+                        serialController.frameNum++;
+                    //如果有文件发送(frameNum!=1)
+                    if(serialController.frameNum!=-1){
+                        serialController.sendFile();
+                    }
+                    //如果发送帧数等于总帧数,就销毁
+                    if(serialController.frameNum== serialController.outPortFrames.getTotalFrameNum())
+                        serialController.frameNum=-1;
+
+                    //正常接收对方发的
+                        if (serialController.inPortFrames.CheckFull()) {
+                            Object o = serialController.inPortFrames.OutPut();
+                            acceptString((String) o);
+                            /*if (String.class.equals(o))
+                                acceptString((String) o);
+                            else if (byte[].class.equals(o))//byte保留
+                                acceptString((String) o);*/
+                        }
+
                 }
             });
             openBnt.setText("关闭串口");
@@ -208,7 +224,7 @@ public class SerialAssistant {
     public void onActionSendFileBtn(ActionEvent actionEvent) throws InterruptedException {
         String filepath = fileTextField.getText();
         File file=new File(filepath);
-        serialController.sendFile(file);
+        serialController.initSendFile(file);
         myMessage.setText("文件已发送");
     }
 

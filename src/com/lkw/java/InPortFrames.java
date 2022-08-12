@@ -49,9 +49,9 @@ public class InPortFrames extends PortFrames{
             return null;
         String str = new String();
         if(b==true)
-            str="1";
+            str="t";
         else
-            str="-1";
+            str="f";
 
         PortFrame portFrame = new PortFrame(3,fileInNum, Object2Byte.String2Byte(str));
         return portFrame.getAllBytes();
@@ -99,6 +99,14 @@ public class InPortFrames extends PortFrames{
             return true;
         }
         return  null;
+
+    }
+
+    //判断进入的mode==3,是什么类型:
+    public boolean checkMode_3(){
+        byte[] bytes = portFrames[0].getBytes();
+        String s = Byte2Object.Byte2String(bytes);
+        return s=="t";
 
     }
 
