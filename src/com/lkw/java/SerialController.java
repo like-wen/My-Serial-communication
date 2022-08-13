@@ -15,7 +15,7 @@ public class SerialController {
 
     public OutPortFrames outPortFrames=new OutPortFrames("");
     //现帧数//-1代表没有文件在发送
-    public int frameNum=-1;
+    //public int frameNum=-1;
 
     public InPortFrames inPortFrames = new InPortFrames();
 
@@ -115,13 +115,13 @@ public class SerialController {
 
     public void initSendFile(File file) {
         outPortFrames = new OutPortFrames(file);
-        frameNum = 0;
+        outPortFrames.fileOutNum=0;
         sendFile();
 
     }
 
     public void sendFile() {
-        sendData(outPortFrames.portFrames[frameNum].getAllBytes());
+        sendData(outPortFrames.portFrames[outPortFrames.fileOutNum].getAllBytes());
 
     }
 

@@ -96,15 +96,16 @@ public class SerialAssistant {
                         serialController.sendData(repeat);
                     }
                     //mode==3并且对方接收正确
-                    if(serialController.inPortFrames.mode==3&&serialController.inPortFrames.checkMode_3())
-                        serialController.frameNum++;
+                    boolean b = serialController.inPortFrames.checkMode_3();
+                    if(serialController.outPortFrames.mode==2&&b)
+                        serialController.outPortFrames.fileOutNum++;
                     //如果有文件发送(frameNum!=1)
-                    if(serialController.frameNum!=-1){
+                    if(serialController.outPortFrames.fileOutNum!=-1){
                         serialController.sendFile();
                     }
                     //如果发送帧数等于总帧数,就销毁
-                    if(serialController.frameNum== serialController.outPortFrames.getTotalFrameNum())
-                        serialController.frameNum=-1;
+                    if(serialController.outPortFrames.fileOutNum== serialController.outPortFrames.getTotalFrameNum())
+                        serialController.outPortFrames.fileOutNum=-1;
                     //正常接收对方发的
                     if (serialController.inPortFrames.CheckFull()) {
                         Object o = serialController.inPortFrames.OutPut();

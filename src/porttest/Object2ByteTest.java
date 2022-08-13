@@ -22,13 +22,21 @@ public class Object2ByteTest {
             System.out.println(bytes2[i]);
         }
 */
-
+/*
+//文件读取
         File file = new File("D:\\work\\javacode\\port5fromport4\\1.txt");
         byte[] bytes = Object2Byte.File2Byte(file);
         for (int i = 0; i < bytes.length; i++) {
             System.out.print(bytes[i]);
         }
+*/
 
+        String strf="f";
+        String strt="t";
+        byte[] bytes = Object2Byte.String2Byte(strt);
+        for (int i = 0; i < bytes.length; i++) {
+            System.out.println(bytes[i]);
+        }
 
     }
 }

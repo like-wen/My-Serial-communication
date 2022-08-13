@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.zip.CRC32;
 
 public class PortFrame {
-
     /*
      * 0是Byte模式
      * 1是String模式
@@ -26,7 +25,6 @@ public class PortFrame {
 
     //输入的字节
     byte[] bytes;
-
 
     /**
      * 一般用于file头的编码
@@ -70,10 +68,21 @@ public class PortFrame {
      * @param bytes
      */
     public  PortFrame(byte[] bytes) {
+
         this.mode= Byte2Object.Byte2Int(ByteCopy.ByteSubstr(bytes,0,4));
         this.frameNum=Byte2Object.Byte2Long(ByteCopy.ByteSubstr(bytes,4,8));
         this.CRC=Byte2Object.Byte2Long(ByteCopy.ByteSubstr(bytes,12,8));
         this.bytes=ByteCopy.ByteSubstr(bytes,20,bytes.length-20);
+        System.out.println();
+        System.out.print("接收:");
+        System.out.print("mode:"+mode);
+        System.out.print("    frameNum:"+frameNum);
+        System.out.print("    CRC:"+CRC);
+        System.out.print("    bytes:");
+        for (int i = 0; i < this.bytes.length; i++) {
+            System.out.print(this.bytes[i]);
+        }
+
     }
 
     /**
@@ -94,6 +103,8 @@ public class PortFrame {
             return bytes;
         }else {
             byte[] bytes1 = Object2Byte.Int2Byte(mode);
+            System.out.println("");
+            System.out.print("发送:");
             System.out.print("mode:");
             for (int i = 0; i < bytes1.length; i++) {
                 System.out.print(bytes1[i]);
@@ -111,12 +122,10 @@ public class PortFrame {
                 System.out.print(bytes3[i]);
             }
 
-
             System.out.print("    bytes:");
             for (int i = 0; i < this.bytes.length; i++) {
                 System.out.print(this.bytes[i]);
             }
-
 
             return ByteCopy.ByteMerge(ByteCopy.ByteMerge(bytes1, bytes2), ByteCopy.ByteMerge(bytes3, this.bytes));
         }

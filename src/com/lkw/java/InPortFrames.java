@@ -23,14 +23,14 @@ public class InPortFrames extends PortFrames{
 
         if(mode==2) {
             //检查帧序号
-            if (portFrame.getFrameNum() == fileInNum)
+            if (portFrame.getFrameNum() != fileInNum)
                 return false;
             //收入帧,帧数++
             portFrames[(int)fileInNum++]=portFrame;
         }
         //设置正在接收帧数
         if (mode==4)
-            fileInNum=1;
+            fileInNum=0;
         //收入帧
         portFrames[0]=portFrame;
         //更改PortFrames的mode
@@ -54,6 +54,7 @@ public class InPortFrames extends PortFrames{
             str="f";
 
         PortFrame portFrame = new PortFrame(3,fileInNum, Object2Byte.String2Byte(str));
+
         return portFrame.getAllBytes();
     }
 
@@ -106,7 +107,7 @@ public class InPortFrames extends PortFrames{
     public boolean checkMode_3(){
         byte[] bytes = portFrames[0].getBytes();
         String s = Byte2Object.Byte2String(bytes);
-        return s=="t";
+        return s.equals("t");
 
     }
 

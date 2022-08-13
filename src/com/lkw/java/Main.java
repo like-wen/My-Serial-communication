@@ -16,7 +16,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("SerialAssistant.fxml"));
