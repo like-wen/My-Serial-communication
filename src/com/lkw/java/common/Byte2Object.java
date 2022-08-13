@@ -28,6 +28,7 @@ public class Byte2Object {
      * @param fileName
      */
     public static void Byte2File(byte[] bytes,String fileName){
+        bytes = ByteCopy.BytesCutNull(bytes);
         String filePath=System.getProperty("user.dir");
         BufferedOutputStream bos = null;
         FileOutputStream fos = null;

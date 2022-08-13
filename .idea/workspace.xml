@@ -9,16 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0e1a79-3f62-4a6c-9a95-5c5249a81c9b" name="Changes" comment="File初步正常,需要检查合并去0之类的">
+    <list default="true" id="3d0e1a79-3f62-4a6c-9a95-5c5249a81c9b" name="Changes" comment="File初步正常,更改部分mode3消失情况&#10;需要检查第二个mode=3不回复的原因&#10;需要检查合并去0之类的">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/port5fromport4_jar/port5fromport4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/port5fromport4_jar/port5fromport4.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/InPortFrames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/InPortFrames.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/OutPortFrames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/OutPortFrames.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/PortFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/PortFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialAssistant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialAssistant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/porttest/Object2ByteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/porttest/Object2ByteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/common/Byte2Object.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/common/Byte2Object.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/common/ByteCopy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/common/ByteCopy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/porttest/bytesCutTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/porttest/bytesCutTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/common/Byte2Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/common/Byte2Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/common/ByteCopy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/common/ByteCopy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/porttest/bytesCutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/porttest/bytesCutTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JAR Application.port5fromport4.jar">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lkw.java.Main" />
       <module name="port5fromport4" />
@@ -79,14 +83,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="bytesCutTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="porttest.bytesCutTest" />
+      <module name="port5fromport4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="porttest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="port5fromport4.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/port5fromport4_jar/port5fromport4.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.port5fromport4.jar" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.bytesCutTest" />
         <item itemvalue="Application.Object2ByteTest" />
       </list>
     </recent_temporary>
@@ -104,7 +122,9 @@
       <workItem from="1660300596767" duration="179000" />
       <workItem from="1660300788508" duration="224000" />
       <workItem from="1660351972046" duration="610000" />
-      <workItem from="1660353008889" duration="11232000" />
+      <workItem from="1660353008889" duration="18707000" />
+      <workItem from="1660379727243" duration="249000" />
+      <workItem from="1660380085811" duration="1412000" />
     </task>
     <task id="LOCAL-00001" summary="String初步正常,File正在试验">
       <created>1660277419414</created>
@@ -134,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660360056376</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="File初步正常,更改部分mode3消失情况&#10;需要检查第二个mode=3不回复的原因&#10;需要检查合并去0之类的">
+      <created>1660372262443</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660372262443</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +183,8 @@
     <MESSAGE value="String正常,File正在试验" />
     <MESSAGE value="String正常,File正在试验2" />
     <MESSAGE value="File初步正常,需要检查合并去0之类的" />
-    <option name="LAST_COMMIT_MESSAGE" value="File初步正常,需要检查合并去0之类的" />
+    <MESSAGE value="File初步正常,更改部分mode3消失情况&#10;需要检查第二个mode=3不回复的原因&#10;需要检查合并去0之类的" />
+    <option name="LAST_COMMIT_MESSAGE" value="File初步正常,更改部分mode3消失情况&#10;需要检查第二个mode=3不回复的原因&#10;需要检查合并去0之类的" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -168,18 +196,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
-          <line>72</line>
+          <line>73</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java</url>
-          <line>99</line>
+          <line>98</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java</url>
@@ -187,9 +210,34 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/PortFrame.java</url>
           <line>163</line>
-          <option name="timeStamp" value="28" />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/common/ByteCopy.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialController.java</url>
@@ -208,6 +256,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
+          <line>115</line>
+          <properties class="com.lkw.java.InPortFrames" method="checkMode_3">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

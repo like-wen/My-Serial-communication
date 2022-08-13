@@ -9,6 +9,10 @@ public class ByteCopy {
      * @return
      */
     public static byte[] ByteMerge (byte[] bytes1 , byte[] bytes2){
+        if(bytes1==null)
+            return bytes2;
+        if(bytes2==null)
+            return bytes1;
         byte[] bytes3=new byte[bytes1.length+ bytes2.length];
         //将第一个数组
         System.arraycopy(bytes1,0,bytes3,0,bytes1.length);
@@ -40,6 +44,18 @@ public class ByteCopy {
             }
         }
         return bytess;
+    }
+
+    public static byte[] BytesCutNull(byte[] bytes){
+        int length = bytes.length-1;
+
+        for (; length > 0; length--) {
+            if(bytes[length]!=0)
+                break;
+        }
+
+        return ByteSubstr(bytes,0,length+1);
+
     }
 
     /**
