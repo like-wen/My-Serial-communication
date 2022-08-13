@@ -29,10 +29,13 @@ public class InPortFrames extends PortFrames{
             portFrames[(int)fileInNum++]=portFrame;
         }
         //设置正在接收帧数
-        if (mode==4)
-            fileInNum=0;
-        //收入帧
-        portFrames[0]=portFrame;
+        if (mode==4) {
+            fileInNum = 0;
+            //收入帧
+            portFrames[0] = portFrame;
+        }
+        if(mode==3)
+            portFrames[0]=portFrame;
         //更改PortFrames的mode
         SetMode(mode);
         return true;
@@ -105,7 +108,9 @@ public class InPortFrames extends PortFrames{
 
     //判断进入的mode==3,是什么类型:
     public boolean checkMode_3(){
+        System.out.println(portFrames[0]);
         byte[] bytes = portFrames[0].getBytes();
+        System.out.println("checkMode_3():"+bytes[0]);
         String s = Byte2Object.Byte2String(bytes);
         return s.equals("t");
 

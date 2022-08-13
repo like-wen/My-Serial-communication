@@ -88,14 +88,14 @@ public class SerialAssistant {
             serialController.setListenerToSerialPort(ev -> {//有消息传来
                 if (ev.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
                     byte[] bytes = serialController.readByteData();
-                    //检查请求
+                    //检查CRC,并接收
                     boolean receive = serialController.inPortFrames.Receive(bytes);
-                    //mode==3就跳过
+                    //发送确认帧消息,mode==3就跳过
                     if(serialController.inPortFrames.mode!=3&&receive) {
                         byte[] repeat = serialController.inPortFrames.RepeatRequest(receive);
                         serialController.sendData(repeat);
                     }
-                    //mode==3并且对方接收正确
+                    //out.mode==2并且接收的确认帧正确
                     boolean b = serialController.inPortFrames.checkMode_3();
                     if(serialController.outPortFrames.mode==2&&b)
                         serialController.outPortFrames.fileOutNum++;
