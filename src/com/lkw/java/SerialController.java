@@ -8,14 +8,11 @@ import java.nio.file.Files;
 import java.util.*;
 
 public class SerialController {
-    /*  private final int partFileSize = 2048;
-      private int partFileNum;*/
+
     private SerialPort serialPort;
 
 
     public OutPortFrames outPortFrames=new OutPortFrames("");
-    //现帧数//-1代表没有文件在发送
-    //public int frameNum=-1;
 
     public InPortFrames inPortFrames = new InPortFrames();
 
@@ -100,19 +97,30 @@ public class SerialController {
         }
     }
 
+    /**
+     * 发送bytes
+     * @param bytes
+     */
     public void sendByte(byte[] bytes) {
         outPortFrames = new OutPortFrames(bytes);
         byte[] allBytes = outPortFrames.portFrames[0].getAllBytes();
         sendData(allBytes);
-
     }
 
+    /**
+     * 发送String
+     * @param str
+     */
     public void sendStr(String str) {
         outPortFrames = new OutPortFrames(str);
         byte[] allBytes = outPortFrames.portFrames[0].getAllBytes();
         sendData(allBytes);
     }
 
+    /**
+     * 初始化发送文件
+     * @param file
+     */
     public void initSendFile(File file) {
         outPortFrames = new OutPortFrames(file);
         outPortFrames.fileOutNum=0;
@@ -120,9 +128,11 @@ public class SerialController {
 
     }
 
+    /**
+     * 发送持续文件
+     */
     public void sendFile() {
         sendData(outPortFrames.portFrames[outPortFrames.fileOutNum].getAllBytes());
-
     }
 
     /**
@@ -131,11 +141,6 @@ public class SerialController {
      * @param data 发送的数据
      */
     public void sendData(byte[] data) {
-        System.out.println();
-        for (int i = 0; i < data.length; i++) {
-
-            System.out.print(data[i]);
-        }
         PrintStream printStream = null;
         try {
             printStream = new PrintStream(serialPort.getOutputStream());  //获取串口的输出流
@@ -148,52 +153,6 @@ public class SerialController {
             }
         }
     }
-
-    /*    *//**
-     * 向串口发送数据
-     * @param data 发送的数据
-     *//*
-    public void sendData(File data) throws InterruptedException {
-        sendData("开始传输文件" + data.getName());
-        Thread.sleep(10);
-        partFileNum = (int) Math.ceil(data.length() / (double) partFileSize);
-        sendData(String.valueOf(partFileNum));
-        byte[] bytes = null;
-        try {
-            bytes = Files.readAllBytes(data.toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for (int i = 0; i < partFileNum; i++) {
-            Thread.sleep(50);
-            PrintStream printStream = null;
-            try {
-                byte[] tempBytes=null;
-                int partFileSizeTemp;
-                if(bytes.length<partFileSize*(i+1)){
-                    partFileSizeTemp=bytes.length-partFileSize*i;
-                }else{
-                    partFileSizeTemp=partFileSize;
-                }
-                tempBytes=new byte[partFileSizeTemp];
-                for (int j = 0; j < partFileSizeTemp; j++) {
-                    tempBytes[j]=bytes[i*partFileSize+j];
-                }
-                System.out.println("总文件bytes"+new String(bytes));//
-                System.out.println("分文件temp:"+new String(tempBytes));//
-                printStream = new PrintStream(serialPort.getOutputStream(), true);  //获取串口的输出流
-                printStream.write(tempBytes);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (printStream != null) {
-                    printStream.close();
-                }
-            }
-
-        }
-
-    }*/
 
     /**
      * 读取输入流
@@ -222,7 +181,6 @@ public class SerialController {
             int bufflenth = is.available(); //获取数据长度
             while (bufflenth != 0) {
                 bytes = new byte[bufflenth];
-//                int read = is.read(bytes);
                 is.read(bytes);
                 bufflenth = is.available();
             }
@@ -236,22 +194,7 @@ public class SerialController {
         }
         return bytes;
     }
-    /*
-     *//**
-     * 读取串口数据
-     * @return 返回串口数据
-     *//*
-    public String readData() {
 
-
-        String str = null;
-        try {
-            str = new String(readByteData(), "GBK");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return str;
-    }*/
 
 
     /**

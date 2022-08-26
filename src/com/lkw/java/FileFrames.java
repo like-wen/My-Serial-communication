@@ -25,21 +25,4 @@ public class FileFrames {
     }
 
 
-
-
-    /**
-     * 直接写出file
-     * @param bytes
-     * @param name
-     */
-    public static void createFile(byte[][] bytes,String name){
-        byte[] bytes1 ={};
-        for (int i = 0; i < bytes.length; i++) {
-            ByteCopy.ByteMerge(bytes1, bytes[i]);
-
-        }
-        Byte2Object.Byte2File(bytes1,name);
-
-    }
-
 }

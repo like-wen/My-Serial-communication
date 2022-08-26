@@ -110,11 +110,6 @@ public class SerialAssistant {
                     if (serialController.inPortFrames.CheckFull()) {
                         Object o = serialController.inPortFrames.OutPut();
                         acceptString((String) o);
-                        //serialController.outPortFrames=new OutPortFrames("");
-                        /*if (String.class.equals(o))
-                            acceptString((String) o);
-                        else if (byte[].class.equals(o))//byte保留
-                            acceptString((String) o);*/
                     }
 
                 }
@@ -127,59 +122,6 @@ public class SerialAssistant {
             myMessage.setText("串口已关闭");
         }
     }
-/*
-
-    */
-/**
-     * 文件接收
-     * @throws IOException
-     *//*
-
-    private void acceptFile() throws IOException {
-        byte[] bytes = serialController.readByteData();
-        mainBytes=concat(mainBytes,bytes);
-        if(partFileNum==1){
-            FileOutputStream outputStream=new FileOutputStream(writeFilename+".lkw");
-            outputStream.write(mainBytes,0,mainBytes.length);
-            outputStream.close();
-        }
-    }
-
-    */
-/**
-     * 合并数组
-     * @param firstArray
-     * @param secondArray
-     * @return
-     *//*
-
-    public byte[] concat(byte[] firstArray, byte[] secondArray) {
-        if(firstArray==null){
-            return secondArray;
-        }
-        if(secondArray==null){
-            return firstArray;
-        }
-        byte[] endArray = new byte[firstArray.length+secondArray.length];
-        for (int i = 0; i < firstArray.length; i++) {
-            endArray[i]=firstArray[i];
-        }
-        for (int i = 0; i < secondArray.length; i++) {
-            endArray[firstArray.length+i]=secondArray[i];
-        }
-        return endArray;
-    }
-
-    */
-/**
-     * 接收文件篇章页数
-     *//*
-
-    private void acceptFileNum() {
-             partFileNum = Integer.parseInt(serialController.readData());
-        System.out.println("partFileNum已经更改"+partFileNum);
-    }
-*/
 
     /**
      * 接收文本信息
@@ -196,16 +138,6 @@ public class SerialAssistant {
         });
     }
 
- /*   *//**
-     * 判断是否是文件传输
-     * @param str
-     *//*
-    private void JudgeFileTrans(String str) {
-        if (str.substring(0, 6).equals("开始传输文件")) {
-            writeFilename = str.substring(6);
-            partFileNum = -1;
-        }
-    }*/
 
     /**
      * 文本发送按钮

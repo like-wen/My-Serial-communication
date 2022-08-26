@@ -9,15 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0e1a79-3f62-4a6c-9a95-5c5249a81c9b" name="Changes" comment="基本正常,差一点小细节">
+    <list default="true" id="3d0e1a79-3f62-4a6c-9a95-5c5249a81c9b" name="Changes" comment="一切正常,除了&#10;留下的字节输入没完善,&#10;还有没有删废代码,&#10;打注释">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/port5fromport4_jar/port5fromport4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/port5fromport4_jar/port5fromport4.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/InPortFrames.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/InPortFrames.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialAssistant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/SerialAssistant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/lkw.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/port5fromport4/com/lkw/java/lkw.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/FileFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/FileFrames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/OutPortFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/OutPortFrames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/SerialAssistant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/lkw.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/lkw.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lkw/java/SerialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lkw/java/SerialController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
       <recent name="D:\work\javacode\port5fromport4\src\com\lkw\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.port5fromport4.jar">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lkw.java.Main" />
       <module name="port5fromport4" />
@@ -102,8 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.port5fromport4.jar" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.port5fromport4.jar" />
         <item itemvalue="Application.bytesCutTest" />
         <item itemvalue="Application.Object2ByteTest" />
       </list>
@@ -127,7 +128,7 @@
       <workItem from="1660380085811" duration="1484000" />
       <workItem from="1660693903059" duration="705000" />
       <workItem from="1661476753255" duration="5741000" />
-      <workItem from="1661489794063" duration="704000" />
+      <workItem from="1661489794063" duration="3341000" />
     </task>
     <task id="LOCAL-00001" summary="String初步正常,File正在试验">
       <created>1660277419414</created>
@@ -171,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660395397406</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="一切正常,除了&#10;留下的字节输入没完善,&#10;还有没有删废代码,&#10;打注释">
+      <created>1661490895101</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661490895101</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +203,8 @@
     <MESSAGE value="File初步正常,需要检查合并去0之类的" />
     <MESSAGE value="File初步正常,更改部分mode3消失情况&#10;需要检查第二个mode=3不回复的原因&#10;需要检查合并去0之类的" />
     <MESSAGE value="基本正常,差一点小细节" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本正常,差一点小细节" />
+    <MESSAGE value="一切正常,除了&#10;留下的字节输入没完善,&#10;还有没有删废代码,&#10;打注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="一切正常,除了&#10;留下的字节输入没完善,&#10;还有没有删废代码,&#10;打注释" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -222,7 +231,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/SerialController.java</url>
-          <line>109</line>
+          <line>113</line>
           <properties class="com.lkw.java.SerialController" method="sendStr">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -231,7 +240,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/lkw/java/InPortFrames.java</url>
-          <line>82</line>
+          <line>80</line>
           <properties class="com.lkw.java.InPortFrames" method="OutPut">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

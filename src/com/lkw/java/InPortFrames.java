@@ -56,9 +56,7 @@ public class InPortFrames extends PortFrames{
             str="t";
         else
             str="f";
-
         PortFrame portFrame = new PortFrame(3,fileInNum, Object2Byte.String2Byte(str));
-
         return portFrame.getAllBytes();
     }
 
