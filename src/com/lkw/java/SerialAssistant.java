@@ -110,6 +110,7 @@ public class SerialAssistant {
                     if (serialController.inPortFrames.CheckFull()) {
                         Object o = serialController.inPortFrames.OutPut();
                         acceptString((String) o);
+                        //serialController.outPortFrames=new OutPortFrames("");
                         /*if (String.class.equals(o))
                             acceptString((String) o);
                         else if (byte[].class.equals(o))//byte保留

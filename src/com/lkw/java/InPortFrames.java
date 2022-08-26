@@ -35,7 +35,7 @@ public class InPortFrames extends PortFrames{
             portFrames=new PortFrame[(int)portFrame.getFrameNum()+1];
             portFrames[0] = portFrame;
         }
-        if(mode==3)
+        if(mode==3||mode==1)
             portFrames[0]=portFrame;
         //更改PortFrames的mode
         SetMode(mode);
@@ -85,6 +85,8 @@ public class InPortFrames extends PortFrames{
             return portFrames[0].getBytes();
         }
         if(mode==1){
+            System.out.println(portFrames[0]);
+            System.out.println(portFrames[0].bytes[0]);
             byte[] bytes = portFrames[0].getBytes();
             return Byte2Object.Byte2String(bytes);
         }
@@ -102,7 +104,7 @@ public class InPortFrames extends PortFrames{
             }
 
             //变成file直接输出
-            Byte2Object.Byte2File(bytes1,"lkw"+fileName);
+            Byte2Object.Byte2File(bytes1,"lkw_"+fileName);
             return null;
         }
         if(mode==3) {
