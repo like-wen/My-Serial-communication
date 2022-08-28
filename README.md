@@ -4,4 +4,4 @@
 
 引用自:https://github.com/FeliksLv01/Serial-Port-Assistant.git
 
-详细介绍见:...csdn还没写完
+详细介绍见:CSDN[https://blog.csdn.net/m0_52070517/article/details/126566477?csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%22126566477%22%2C%22source%22%3A%22m0_52070517%22%7D]
